@@ -40,6 +40,9 @@ def find_microbit():
         for port in ports:
             if 'VID:PID=d28:204' in port[2]:
                 return port[0]
+    elif platform.startswith('win32'):
+        # To result in a COM* port. TODO: Finish this.
+        pass
     return None
 
 
