@@ -23,11 +23,11 @@ why it can't connect. In most cases it will try to print some helpful advice.
 
 Once connected the script will stop the program running on the micro:bit in
 order to drop you into the REPL itself. You type Python commands next to the
-prompt ('>>>').
+prompt (``>>>``).
 
 You can use the TAB key to auto-complete words. For example, if you
-type `microbit.sc` then hit TAB, MicroPython will helpfully complete the
-word for you, like this: `microbit.screen`.
+type ``microbit.sc`` then hit TAB, MicroPython will helpfully complete the
+word for you, like this: ``microbit.screen``.
 
 You can move forwards and backwards through your command history by using the
 up arrow key (to move back through your command history) and down arrow key
@@ -43,15 +43,15 @@ as the version you originally flashed onto the device.
 Useful Commands
 ---------------
 
-A good place to start is to type `help()`. From here you should be able
+A good place to start is to type ``help()``. From here you should be able
 to explore the device and the MicroPython version of Python 3.
 
-All the micro:bit's hardware is available to program via the `microbit`
-module. To start using it type the command `import microbit`. Do fun things
-such as `microbit.display.scroll('Hello, World!')` and watch the device react
+All the micro:bit's hardware is available to program via the ``microbit``
+module. To start using it type the command ``import microbit``. Do fun things
+such as ``microbit.display.scroll('Hello, World!')`` and watch the device react
 in real-time.
 
-Type the command `dir()` to see a list of all the things currently
+Type the command ``dir()`` to see a list of all the things currently
 available to you - this includes the various classes and functions for the
 program you may have already flashed onto the micro:bit.
 
