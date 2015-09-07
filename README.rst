@@ -15,6 +15,18 @@ For more information about what a REPL, is check out this Wikipedia article:
 
 https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop
 
+Installation
+------------
+
+Unfortunately, Windows does not come with serial/COM drivers for the micro:bit
+installed by default (Linux and OSX do). In order to make this work you should
+use the mbedWinSerial_16466.exe file to install the correct drivers. You *MUST*
+have your micro:bit plugged into your computer when you run this command.
+
+For more information and the latest versions of this driver please visit:
+
+https://developer.mbed.org/handbook/Windows-serial-configuration
+
 Getting Started
 ---------------
 

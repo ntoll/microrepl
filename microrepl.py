@@ -40,6 +40,10 @@ def find_microbit():
         for port in ports:
             if 'VID:PID=d28:204' in port[2]:
                 return port[0]
+    elif platform.startswith('win'):
+        for port in ports:
+            if 'VID:PID=0D28:0204' in port[2]:
+                return port[0]
     return None
 
 
@@ -75,7 +79,7 @@ def main():
             # Try to be as helpful as possible.
             sys.stderr.write("Found micro:bit, but could not connect via" +
                              " port %r: %s\n" % (port, e))
-            sys.stderr.write("I'm not sure what to suggest. :-(")
+            sys.stderr.write("I'm not sure what to suggest. :-(\n")
         sys.exit(1)
     # Emit some helpful information about the program and MicroPython.
     shortcut_message = 'Quit: {} | Stop program: Ctrl+C | Reset: Ctrl+D\n'
