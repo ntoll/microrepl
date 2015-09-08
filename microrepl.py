@@ -15,6 +15,7 @@ MICROBIT_PID = 516
 MICROBIT_VID = 3368
 BAUDRATE = 115200
 PARITY = 'N'
+ARM = 'https://developer.mbed.org/handbook/Windows-serial-configuration'
 
 
 if sys.version_info >= (3, 0):
@@ -44,6 +45,9 @@ def find_microbit():
         for port in ports:
             if 'VID:PID=0D28:0204' in port[2]:
                 return port[0]
+        # No COM port found, so give an informative prompt.
+        sys.stderr.write('Have you installed the micro:bit driver?\n')
+        sys.stderr.write('For more details see: {}\n'.format(ARM))
     return None
 
 

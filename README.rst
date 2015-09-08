@@ -19,13 +19,35 @@ Installation
 ------------
 
 Unfortunately, Windows does not come with serial/COM drivers for the micro:bit
-installed by default (Linux and OSX do). In order to make this work you should
-use the mbedWinSerial_16466.exe file to install the correct drivers. You *MUST*
-have your micro:bit plugged into your computer when you run this command.
+installed by default (happily, Linux and OSX do).
+
+If you're on Windows, in order to make this work you should use the
+mbedWinSerial_16466.exe file (found in the root directory of this project) to
+install the correct drivers. You *MUST* have your micro:bit plugged into your
+computer when you run this command.
 
 For more information and the latest versions of this driver please visit:
 
 https://developer.mbed.org/handbook/Windows-serial-configuration
+
+Assuming this requirement is met, you can install/run the script in three ways:
+
+1. Install via pip and PyPI::
+
+    # pip install microrepl
+
+2. Install via setup.py::
+
+    # python setup.py install
+
+3. Run the script from within the repository::
+
+    # pip install -r requirements.txt
+    # python microrepl.py
+
+All of the above should probably be done within a virtualenv. The first two
+options will result in two commands being installed: microrepl or its alias
+urepl. Simply type these at the command prompt to run the application.
 
 Getting Started
 ---------------

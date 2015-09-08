@@ -8,7 +8,7 @@ with open('CHANGES.rst') as f:
 
 setup(
     name='microrepl',
-    version='0.1',
+    version='0.4',
     description='A REPL client for MicroPython running on the BBC micro:bit.',
     long_description=readme + '\n\n' + changes,
     author='Nicholas H.Tollervey',
@@ -17,6 +17,8 @@ setup(
     scripts = ['microrepl.py', ],
     license='apache2',
     install_requires=['pyserial', ],
+    package_data={'': ['README.rst', 'CHANGES.rst',
+                  'mbedWinSerial_16466.exe']},
     entry_points = {
         'console_scripts': [
             'microrepl = microrepl:main',
