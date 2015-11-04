@@ -59,6 +59,9 @@ Once connected the script will stop the program running on the micro:bit in
 order to drop you into the REPL itself. You type Python commands next to the
 prompt (``>>>``).
 
+If things don't seem to be working, re-flash your micro:bit using the
+``firmware.hex`` file in this directory, and try again.
+
 You can use the TAB key to auto-complete words. For example, if you
 type ``microbit.sc`` then hit TAB, MicroPython will helpfully complete the
 word for you, like this: ``microbit.screen``.
