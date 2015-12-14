@@ -7,8 +7,8 @@ to bring up the Python REPL.
 import sys
 import serial
 import serial.tools.miniterm
-from serial.tools.miniterm import (comports, console, Miniterm,
-                                   key_description)
+from serial.tools.list_ports import comports
+from serial.tools.miniterm import console, Miniterm, key_description
 
 
 MICROBIT_PID = 516
