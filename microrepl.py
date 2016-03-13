@@ -9,7 +9,9 @@ import sys
 import serial
 import serial.tools.miniterm
 from serial.tools.list_ports import comports
-from serial.tools.miniterm import console, Miniterm, key_description
+from serial.tools.miniterm import Console, Miniterm, key_description
+
+console = Console()
 
 
 MICROBIT_PID = 516
@@ -36,7 +38,7 @@ def find_microbit():
     platform = sys.platform
     if platform.startswith('linux'):
         for port in ports:
-            if 'VID:PID=0d28:0204' in port[2]:
+            if 'VID:PID=0D28:0204' in port[2].upper():
                 return port[0]
     elif platform.startswith('darwin'):
         for port in ports:
@@ -54,15 +56,12 @@ def find_microbit():
 
 def connect_miniterm(port):
     try:
+        ser = serial.Serial(port, BAUDRATE, parity=PARITY, rtscts=False, xonxoff=False)
         return Miniterm(
-            port,
-            BAUDRATE,
-            PARITY,
-            rtscts=False,
-            xonxoff=False,
+            ser,
             echo=False,
-            convert_outgoing=2,
-            repr_mode=0,
+            #convert_outgoing=2,
+            #repr_mode=0,
         )
     except serial.SerialException as e:
         if e.errno == 16:
@@ -107,6 +106,8 @@ def main():
     sys.stderr.write(help_message)
     # Start everything.
     console.setup()
+    miniterm.set_rx_encoding('utf-8')
+    miniterm.set_tx_encoding('utf-8')
     miniterm.start()
     miniterm.serial.write(b'\x03')  # Connecting stops the running program.
     try:
