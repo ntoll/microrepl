@@ -42,7 +42,7 @@ def find_microbit():
                 return port[0]
     elif platform.startswith('darwin'):
         for port in ports:
-            if 'VID:PID=d28:204' in port[2]:
+            if 'VID:PID=0D28:0204' in port[2]:
                 return port[0]
     elif platform.startswith('win'):
         for port in ports:
