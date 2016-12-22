@@ -34,20 +34,13 @@ def find_microbit():
     Returns the port for the first micro:bit found connected to the computer
     running this script. If no micro:bit is found, returns None.
     """
-    ports = comports()
-    platform = sys.platform
-    if platform.startswith('linux'):
-        for port in ports:
-            if 'VID:PID=0D28:0204' in port[2].upper():
-                return port[0]
-    elif platform.startswith('darwin'):
-        for port in ports:
-            if 'VID:PID=0D28:0204' in port[2]:
-                return port[0]
-    elif platform.startswith('win'):
-        for port in ports:
-            if 'VID:PID=0D28:0204' in port[2]:
-                return port[0]
+    for port, desc, opts in comports():
+        if 'VID:PID=' in opts:
+            vid, pid = opts.split('=', 1)[-1].split(':')
+            vid, pid = int(vid, 16), int(pid, 16)
+            if vid == 0x0D28 and pid == 0x0204:
+                return port
+    if sys.platform.startswith('win'):
         # No COM port found, so give an informative prompt.
         sys.stderr.write('Have you installed the micro:bit driver?\n')
         sys.stderr.write('For more details see: {}\n'.format(ARM))
