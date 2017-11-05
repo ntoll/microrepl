@@ -5,6 +5,7 @@ micro:bit is connected and attempts to make a serial connection to it in order
 to bring up the Python REPL.
 """
 from __future__ import print_function
+import re
 import sys
 import serial
 import serial.tools.miniterm
@@ -19,6 +20,9 @@ MICROBIT_VID = 3368
 BAUDRATE = 115200
 PARITY = 'N'
 ARM = 'https://developer.mbed.org/handbook/Windows-serial-configuration'
+
+# Regular expression to match the device id of the micro:bit
+RE_VID_PID = re.compile("VID:PID=([0-9A-F]+):([0-9A-F]+)", re.I)
 
 
 if sys.version_info >= (3, 0):
@@ -35,8 +39,9 @@ def find_microbit():
     running this script. If no micro:bit is found, returns None.
     """
     for port, desc, opts in comports():
-        if 'VID:PID=' in opts:
-            vid, pid = opts.split('=', 1)[-1].split(':')
+        match = RE_VID_PID.search(opts)
+        if match:
+            vid, pid = match.groups()
             vid, pid = int(vid, 16), int(pid, 16)
             if vid == 0x0D28 and pid == 0x0204:
                 return port
