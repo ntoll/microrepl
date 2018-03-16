@@ -8,7 +8,7 @@ with open('CHANGES.rst') as f:
 
 setup(
     name='microrepl',
-    version='0.5',
+    version='0.6',
     description='A REPL client for MicroPython running on the BBC micro:bit.',
     long_description=readme + '\n\n' + changes,
     author='Nicholas H.Tollervey',

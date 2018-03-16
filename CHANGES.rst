@@ -1,6 +1,11 @@
 Release History
 ---------------
 
+0.6
++++
+
+Fixed bug #13 on OSX
+
 0.5
 +++
 
