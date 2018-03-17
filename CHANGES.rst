@@ -1,6 +1,11 @@
 Release History
 ---------------
 
+0.7
++++
+
+Fixed bug #4 when using PySerial version >= 3.0
+
 0.6
 +++
 
