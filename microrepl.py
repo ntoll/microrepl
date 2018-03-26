@@ -12,8 +12,6 @@ import serial.tools.miniterm
 from serial.tools.list_ports import comports
 from serial.tools.miniterm import Console, Miniterm, key_description
 
-console = Console()
-
 
 MICROBIT_PID = 516
 MICROBIT_VID = 3368
@@ -94,7 +92,6 @@ def main():
     sys.stderr.write(shortcut_message.format(key_description(EXIT_CHAR)))
     sys.stderr.write(help_message)
     # Start everything.
-    console.setup()
     miniterm.exit_character = EXIT_CHAR
     miniterm.set_rx_encoding('utf-8')
     miniterm.set_tx_encoding('utf-8')
