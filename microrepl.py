@@ -13,8 +13,8 @@ from serial.tools.list_ports import comports
 from serial.tools.miniterm import Console, Miniterm, key_description
 
 
-MICROBIT_PID = 516
-MICROBIT_VID = 3368
+MICROBIT_PID = 516     # 0x0204
+MICROBIT_VID = 3368    # 0x0D28
 BAUDRATE = 115200
 PARITY = 'N'
 ARM = 'https://developer.mbed.org/handbook/Windows-serial-configuration'
@@ -34,7 +34,7 @@ def find_microbit():
         if match:
             vid, pid = match.groups()
             vid, pid = int(vid, 16), int(pid, 16)
-            if vid == 0x0D28 and pid == 0x0204:
+            if vid == MICROBIT_VID and pid == MICROBIT_PID:
                 return port
     if sys.platform.startswith('win'):
         # No COM port found, so give an informative prompt.
