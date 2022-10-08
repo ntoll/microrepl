@@ -18,19 +18,11 @@ https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop
 Installation
 ------------
 
-Unfortunately, Windows does not come with serial/COM drivers for the micro:bit
-installed by default (happily, Linux and OSX do).
+All currently supported Windows versions (8.1+) should automatically install
+the micro:bit serial/COM drivers when the device is first plugged in.
+All versions of Linux and macOS should work out of the box.
 
-If you're on Windows, in order to make this work you should use the
-mbedWinSerial_16466.exe file (found in the root directory of this project) to
-install the correct drivers. You *MUST* have your micro:bit plugged into your
-computer when you run this command.
-
-For more information and the latest versions of this driver please visit:
-
-https://developer.mbed.org/handbook/Windows-serial-configuration
-
-Assuming this requirement is met, you can install/run the script in three ways:
+You can install/run the script in three ways:
 
 1. Install via pip and PyPI::
 

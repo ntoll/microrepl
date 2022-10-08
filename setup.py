@@ -17,8 +17,7 @@ setup(
     scripts = ['microrepl.py', ],
     license='apache2',
     install_requires=['pyserial>=3.0', ],
-    package_data={'': ['README.rst', 'CHANGES.rst',
-                  'mbedWinSerial_16466.exe']},
+    package_data={'': ['README.rst', 'CHANGES.rst'},
     entry_points = {
         'console_scripts': [
             'microrepl = microrepl:main',
