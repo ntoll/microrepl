@@ -6,6 +6,7 @@ Release History
 
 Fixed bug #4 when using PySerial version >= 3.0
 Fixed issue #16 running on Windows.
+Set the exit code to 1 when microrepl doesn't find a micro:bit serial port. 
 
 0.6
 +++
