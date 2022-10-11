@@ -84,7 +84,7 @@ def main():
     print('port', port)
     if not port:
         sys.stderr.write('Could not find micro:bit. Is it plugged in?\n')
-        sys.exit(0)
+        sys.exit(1)
     miniterm = connect_miniterm(port)
     # Emit some helpful information about the program and MicroPython.
     shortcut_message = 'Quit: {} | Stop program: Ctrl+C | Reset: Ctrl+D\n'
