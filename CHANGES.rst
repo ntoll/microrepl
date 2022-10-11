@@ -6,6 +6,9 @@ Release History
 
 Fixed bug #4 when using PySerial version >= 3.0
 Fixed issue #16 running on Windows.
+Set pyserial minimum version to 3.0.
+Removed mbedWinSerial_16466.exe driver as is not necessary in the currently
+supported Windows versions.
 Set the exit code to 1 when microrepl doesn't find a micro:bit serial port. 
 
 0.6
